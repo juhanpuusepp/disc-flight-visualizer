@@ -21,5 +21,5 @@ export const FLIGHT_LIMITS = {
   } as const;
   
 export const DEFAULT_PARAMS = {
-    speed: 1, glide: 1, turn: 0, fade: 0,
+    speed: 14, glide: 7, turn: -5, fade: 5,
   } as const;
