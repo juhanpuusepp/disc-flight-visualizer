@@ -1,6 +1,3 @@
-// src/lib/types.ts
-
-// Geometry
 export type Point = Readonly<{ x: number; y: number }>;
 export type Trajectory = ReadonlyArray<Point>;
 
@@ -12,7 +9,6 @@ export type FlightParams = Readonly<{
   fade: number;  // 0..5
 }>;
 
-// Viewport + ranges
 export type Viewport = Readonly<{ width: number; height: number; paddingPct?: number }>;
 export type IntRange = Readonly<{ min: number; max: number; step: number }>;
 
@@ -24,6 +20,6 @@ export const FLIGHT_LIMITS = {
     fade:  { min: 0,  max: 5,  step: 1 },
   } as const;
   
-  export const DEFAULT_PARAMS = {
+export const DEFAULT_PARAMS = {
     speed: 1, glide: 1, turn: 0, fade: 0,
   } as const;

@@ -44,7 +44,6 @@
         const anchorX = vw / 2;
         const anchorY = vh - padPx;
   
-        // SCALE: 1 world Y unit = full usable vertical pixels (bottom pad → top pad)
         const usableY = Math.max(EPS, anchorY - padPx);
         const scale = usableY;
   
@@ -69,7 +68,8 @@
   
         // markers
         [startX, startY] = [x0, y0];
-        [endX, endY] = toScreen(points.at(-1)!.x, points.at(-1)!.y);
+        const last = points[points.length - 1];
+        [endX, endY] = toScreen(last.x, last.y);
       } else {
         d = '';
         startX = startY = endX = endY = 0;
@@ -87,7 +87,6 @@
   </style>
   
   <div class="wrap" bind:this={container}>
-    <!-- 'none' removes internal letterboxing so we can fill height exactly -->
     <svg {viewBox} preserveAspectRatio="none" role="img" aria-label="Disc trajectory">
       {#if hasPath}
         <path class="path" d={d} />
