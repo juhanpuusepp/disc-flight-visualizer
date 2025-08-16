@@ -28,21 +28,22 @@
   <style>
     .controls {
       display: grid;
-      grid-template-columns: repeat(4, minmax(120px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(4, minmax(110px, 1fr));
+      gap: 20px;
       align-items: end;
     }
     label {
       display: grid;
-      gap: 6px;
+      gap: 5px;
       font: 500 14px/1.2 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     }
     input[type="number"] {
-      padding: 8px 10px;
-      border: 1px solid #ccc;
+      text-align: center;
+      
+      border: 0px solid #ccc;
       border-radius: 10px;
-      font: 14px/1 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      width: 100%;
+      font: 30px/4 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      width: 90%;
     }
     small.hint { color: #666; font-size: 12px; }
   </style>
@@ -60,7 +61,7 @@
         on:input={(e) => update('speed', (e.currentTarget as HTMLInputElement).valueAsNumber)}
         inputmode="numeric"
       />
-      <small class="hint">{FLIGHT_LIMITS.speed.min}–{FLIGHT_LIMITS.speed.max}</small>
+      <small class="hint">{FLIGHT_LIMITS.speed.min} – {FLIGHT_LIMITS.speed.max}</small>
     </label>
   
     <label for="glide">
@@ -75,7 +76,7 @@
         on:input={(e) => update('glide', (e.currentTarget as HTMLInputElement).valueAsNumber)}
         inputmode="numeric"
       />
-      <small class="hint">{FLIGHT_LIMITS.glide.min}–{FLIGHT_LIMITS.glide.max}</small>
+      <small class="hint">{FLIGHT_LIMITS.glide.min} – {FLIGHT_LIMITS.glide.max}</small>
     </label>
   
     <label for="turn">
@@ -90,7 +91,7 @@
         on:input={(e) => update('turn', (e.currentTarget as HTMLInputElement).valueAsNumber)}
         inputmode="numeric"
       />
-      <small class="hint">{FLIGHT_LIMITS.turn.min}…{FLIGHT_LIMITS.turn.max} (negative = more early right)</small>
+      <small class="hint">{FLIGHT_LIMITS.turn.min} - {FLIGHT_LIMITS.turn.max}</small>
     </label>
   
     <label for="fade">
@@ -105,7 +106,7 @@
         on:input={(e) => update('fade', (e.currentTarget as HTMLInputElement).valueAsNumber)}
         inputmode="numeric"
       />
-      <small class="hint">{FLIGHT_LIMITS.fade.min}–{FLIGHT_LIMITS.fade.max} (higher = stronger late left)</small>
+      <small class="hint">{FLIGHT_LIMITS.fade.min} – {FLIGHT_LIMITS.fade.max}</small>
     </label>
   </form>
   
